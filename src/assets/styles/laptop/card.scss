@@ -1,0 +1,30 @@
+@import "../../../App.scss";
+
+.card-container {
+  background-color: rgb(255, 255, 255);
+  width: min-content;
+  .img-laptop {
+    width: 20vw;
+  }
+  &-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    p {
+      font-weight: bold;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .arrow-down {
+        transform: rotate(-90deg);
+      }
+      .arrow-up {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

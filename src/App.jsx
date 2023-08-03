@@ -1,9 +1,12 @@
 import "./App.scss";
-
+import CardsLaptop from "./components/card-laptop/CardsLaptop";
 function App() {
   return (
     <>
-      <div>hello world</div>
+      <div>
+        <p>hello world</p>
+        <CardsLaptop />
+      </div>
     </>
   );
 }
