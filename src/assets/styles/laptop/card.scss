@@ -1,5 +1,10 @@
 @import "../../../App.scss";
 
+.father-box-laptop {
+  display: flex;
+  align-items: flex-end;
+}
+
 .card-container {
   background-color: rgb(255, 255, 255);
   width: min-content;
@@ -12,6 +17,9 @@
     justify-content: center;
     align-items: center;
     gap: 0.4rem;
+    h1 {
+      font-size: 2rem;
+    }
     p {
       font-weight: bold;
     }
@@ -27,4 +35,16 @@
       }
     }
   }
+}
+
+.filter-gray {
+  filter: invert(83%) sepia(7%) saturate(25%) hue-rotate(314deg) brightness(82%)
+    contrast(93%);
+}
+
+.helloworld {
+  font-size: 3rem;
+  background-color: aquamarine;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

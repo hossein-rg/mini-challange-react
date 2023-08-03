@@ -31,7 +31,7 @@ class CardsLaptop extends Component {
     ];
 
     return (
-      <div>
+      <div className="father-box-laptop">
         {data.map((index) => {
           return (
             <CardInitial
