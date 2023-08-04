@@ -15,14 +15,12 @@ file structure:
 # challange 2
 
 file structure:
- .
- └── tip-calculator
-                ├── section-left
-                │              ├── Bill.jsx
-                │              ├── People.jsx
-                │              └── Tip.jsx
-                │
-                └── section-right
-                               └── AmountTotal.jsx
+tip-calculator
+  - section-left
+    - Bill.jsx
+    - People.jsx
+    - Tip.jsx
+  - section-right
+    - AmountTotal.jsx
 
 - ![alt text](./challange/challange2.JPG "challange 2")
