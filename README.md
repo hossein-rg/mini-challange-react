@@ -3,11 +3,10 @@
 # challange 1
 
 file structure:
- .
- └── card-laptop
-            ├── CardInitial.jsx
-            │
-            └── CardLaptop.jsx
+
+card-laptop
+ - CardInitial.jsx
+ - CardLaptop.jsx
 
 - ![alt text](./challange/challange1.JPG "challange 1")
 
