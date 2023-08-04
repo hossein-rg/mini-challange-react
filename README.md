@@ -14,6 +14,7 @@ card-laptop
 # challange 2
 
 file structure:
+
 tip-calculator
   - section-left
     - Bill.jsx
