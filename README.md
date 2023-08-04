@@ -3,7 +3,8 @@
 # challange 1
 
 file structure:
-─── card-laptop
+ .
+ └── card-laptop
             ├── CardInitial.jsx
             │
             └── CardLaptop.jsx
@@ -14,7 +15,8 @@ file structure:
 # challange 2
 
 file structure:
-─── tip-calculator
+ .
+ └── tip-calculator
                 ├── section-left
                 │              ├── Bill.jsx
                 │              ├── People.jsx
