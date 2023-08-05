@@ -26,9 +26,9 @@ class PassGen extends Component{
                     <div className={styles.passLength}>
                         <div>
                             <p>Character Length</p>
-                            <p>0</p>
+                            <h1>0</h1>
                         </div>
-                        <div>
+                        <div className={styles.rangeChar}>
                             <input type="range" name="rangeLen"/>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ class PassGen extends Component{
                     </div>
                     <div className={styles.showStrength}>
                         <p>STRENGTH</p>
-                        <p>🟢🟢🟢🟢🟢🟢</p>
+                        <h1>🟡🟡</h1>
                     </div>
                 </div>
             </div>
