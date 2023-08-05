@@ -1,3 +1,23 @@
-.div{
+.container{
     background-color: rgb(0, 191, 255);
+    &_passWasCreate{
+        display: flex;
+    }
+    &_createPass{
+        .passLength{
+            div{
+            display: flex;
+            }
+        }
+        .passStrength{
+            ul{
+                li{
+                    display: flex;
+                }
+            }
+        }
+        .showStrength{
+            display: flex;
+        }
+    }
 }
