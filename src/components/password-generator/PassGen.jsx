@@ -56,6 +56,15 @@ class PassGen extends Component{
     }
 
 
+    copyLink =()=>{
+        if(this.state.passCreated === ""){
+            alert("Please create your own password")
+        }
+        else{
+            navigator.clipboard.writeText(this.state.passCreated);
+            alert("Copied to clipboard");
+        }
+    }
 
     render(){
         return(
@@ -63,7 +72,7 @@ class PassGen extends Component{
                 <h2>Password Generator</h2>
                 <div className={styles.container_passWasCreate}>
                     <p>{this.state.passCreated}</p>
-                    <img src={iconCopy} alt="iconCopy" />
+                    <img onClick={this.copyLink} src={iconCopy} alt="iconCopy" />
                 </div>
                 <div className={styles.container_createPass}>
                     <div className={styles.passLength}>
