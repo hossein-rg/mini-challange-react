@@ -24,3 +24,14 @@ tip-calculator
     - AmountTotal.jsx
 
 - ![alt text](./challange/challange2.JPG "challange 2")
+
+
+# challange 1
+
+file structure:
+
+pass-gen
+ - PassGen.jsx
+
+- ![alt text](./challange/challange3.JPG "challange 3")
+
