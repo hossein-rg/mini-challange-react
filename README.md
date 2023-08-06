@@ -26,7 +26,7 @@ tip-calculator
 - ![alt text](./challange/challange2.JPG "challange 2")
 
 
-# challange 1
+# challange 3
 
 file structure:
 
