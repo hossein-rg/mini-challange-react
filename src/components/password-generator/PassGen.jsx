@@ -11,7 +11,8 @@ class PassGen extends Component{
         this.sySelect = React.createRef();
         this.state={
             charLength:0,
-            passCreated:""
+            passCreated:"",
+            powerPass:"",
         }
     }
 
@@ -22,6 +23,64 @@ class PassGen extends Component{
         let statusNumber = this.nuSelect.current.checked;
         let statusSymbol = this.sySelect.current.checked;
 
+        // show strength
+        
+        let checkPower = 0;
+        statusLower ? checkPower = checkPower + 1 : checkPower ;
+        statusUpper ? checkPower = checkPower + 2 : checkPower ;
+        statusNumber ? checkPower = checkPower + 2 : checkPower ; 
+        statusSymbol ? checkPower = checkPower + 2 : checkPower ;
+        if(this.state.charLength < 5){
+            if(checkPower < 3){
+                this.setState({
+                    powerPass:"🔴"
+                })
+            }
+            else if (checkPower<5){
+                this.setState({
+                    powerPass: "🟡🟡"
+                    });  
+            }
+            else if (checkPower<=7){
+                this.setState({
+                    powerPass: "🟡🟡🟡"
+                    });  
+            }
+        }
+        else if(this.state.charLength >= 5 && this.state.charLength < 10){
+            if(checkPower < 3){
+                this.setState({
+                    powerPass:"🟡🟡"
+                })
+            }
+            else if (checkPower<5){
+                this.setState({
+                    powerPass: "🟢🟢🟢🟢"
+                    });  
+            }
+            else if (checkPower<=7){
+                this.setState({
+                    powerPass: "🟢🟢🟢🟢🟢"
+                    });  
+            }
+        }
+        else if(this.state.charLength >= 10){
+            if(checkPower < 3){
+                this.setState({
+                    powerPass:"🟢🟢🟢🟢"
+                })
+            }
+            else if (checkPower<5){
+                this.setState({
+                    powerPass: "🟢🟢🟢🟢🟢"
+                    });  
+            }
+            else if (checkPower<=7){
+                this.setState({
+                    powerPass: "🟢🟢🟢🟢🟢🟢"
+                    });  
+            }
+        }
         // create allStrings
         let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -106,7 +165,7 @@ class PassGen extends Component{
                     </div>
                     <div className={styles.showStrength}>
                         <p>STRENGTH</p>
-                        <h1>🟡🟡</h1>
+                        <h1>{this.state.powerPass}</h1>
                     </div>
                 </div>
             </div>
