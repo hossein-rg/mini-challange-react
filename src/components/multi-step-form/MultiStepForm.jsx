@@ -1,5 +1,6 @@
 import React from 'react';
 import PersonalInfo from './PersonalInfo';
+import SelectPlan from './SelectPlan';
 
 class MultiStepForm extends React.Component{
     constructor(props){
@@ -8,7 +9,10 @@ class MultiStepForm extends React.Component{
 
     render(){
         return(
+            <>
             <PersonalInfo />
+            <SelectPlan />
+            </>
         )
     }
 }
