@@ -1,0 +1,49 @@
+*{
+    font-size: 100%;
+}
+
+.div_PersonalInfo{
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    h1{
+        font-size: 2rem;
+    }
+    p{
+        font-size: 1rem;
+        color:rgb(185, 185, 185);
+    }
+
+    .form_PersonalInfo{
+        padding: 1rem 0;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            div{
+                display: flex;
+                flex-direction: column;
+                gap: 0.3rem;
+                label{
+                    color: teal;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-size: 1rem;
+                }
+                input{
+                    padding: 0.7rem;
+                    width:60%;
+                    border-radius: 0.4rem;
+                    border: 1px solid rgb(201, 201, 201);
+                    &:focus{
+                        border: 1px solid teal;
+                        outline:none;
+                    }
+                    &::placeholder{
+                        color: rgb(204, 204, 204);
+                    }
+                }
+            }
+        }
+    }
+}
