@@ -9,25 +9,43 @@ class SelectPlan extends React.Component{
         this.selectionMonthYear = React.createRef();
         this.state={
             month:true,
+            arcade:"$9/mo",
+            advanced:"$12/mo",
+            pro:"$15/mo"
         }
     }
+
+
 
     clickSelectionbar = ()=>{
         const elementBtn = this.selectionMonthYear.current;
         this.setState({
-            month: this.state.month ?false : true,
+            month: this.state.month ? false : true,
         },()=>{
             if(this.state.month) {
-                elementBtn.className = `${styles.inputSelection}`
+                elementBtn.className = `${styles.inputSelection}`;
+                this.setState({
+                    arcade:"$9/mo",
+                    advanced:"$12/mo",
+                    pro:"$15/mo"
+                })
             }
             else{
-                elementBtn.className = `${styles.inputSelection} ${styles.inputSelectionYear}`
+                elementBtn.className = `${styles.inputSelection} ${styles.inputSelectionYear}`;
+                this.setState({
+                    arcade:"$85/ye",
+                    advanced:"$115/ye",
+                    pro:"$140/ye"
+                })
             }
         })
     }
 
     
     render(){
+
+        let {arcade,advanced,pro} = this.state;
+
         return(
             <div className={styles.div_selectPlan}>
                 <h1>Select your plan</h1>
@@ -36,17 +54,17 @@ class SelectPlan extends React.Component{
                     <div>
                         <img src={arcadeIcon} alt="arcade" />
                         <p>Arcade</p>
-                        <span>$9/mo</span>
+                        <span>{arcade}</span>
                     </div>
                     <div >
                         <img  src={advancedIcon}alt="advanced"/>
                         <p>Advanced</p>
-                        <span>$12/mo</span>
+                        <span>{advanced}</span>
                     </div>
                     <div>
                         <img src={proIcon} alt="pro" />
                         <p>Pro</p>
-                        <span>$15/mo</span>
+                        <span>{pro}</span>
                     </div>
                 </div>
                 <div className={styles.selectYorM}>
