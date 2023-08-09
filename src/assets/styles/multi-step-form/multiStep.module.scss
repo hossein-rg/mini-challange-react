@@ -23,6 +23,7 @@ $color-p:rgb(185, 185, 185);
 
     .form_PersonalInfo{
         padding: 1rem 0;
+        width: 700px;
         form{
             display: flex;
             flex-direction: column;
@@ -218,6 +219,51 @@ $color-p:rgb(185, 185, 185);
                     font-size: 0.8rem;
                     color: gray;
                 }
+            }
+        }
+    }
+}
+
+.div_finishingUp{
+    padding: $padd-mainBox;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 500px;
+    h1{
+        font-size: $font-head;
+    }
+    >p{
+        font-size: $font-p;
+        color: $color-p;
+    }
+    .box_finishingUp{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        &_changePlan{
+            display: flex;
+            align-items: center;
+            div{
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                p:first-child{
+                    font-size: 1rem;
+                    font-weight:600;
+                }
+                p:nth-child(2){
+                    font-size: 0.8em;
+                    color:gray;
+                    cursor: pointer;
+                }
+            }
+            >p{
+                padding: 0 1rem;
+                font-weight: bold;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: $font-p;
             }
         }
     }
