@@ -55,7 +55,6 @@ class FinishingUp extends React.Component{
 
     render(){
 
-
         return(
             <div className={styles.div_finishingUp}>
                 <h1>Finishing up</h1>
