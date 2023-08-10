@@ -4,13 +4,13 @@ class FinishingUp extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            formYearOrMonth : false,
+            formYearOrMonth : true,
         }
     }
 
     formSelectPlan = "Arcade";
     formSelectPlanPrice = 9;
-    formAddOns = [true,false,true];
+    formAddOns = [true,true,true];
     dataAddOns =[
         {
             dt:"Online service",
@@ -20,7 +20,7 @@ class FinishingUp extends React.Component{
             yrPrice:10
         },
         {
-            dt:"larger storage",
+            dt:"Larger storage",
             mo:"+$2/mo",
             yr:"+$20/yr",
             moPrice:2,
@@ -77,11 +77,11 @@ class FinishingUp extends React.Component{
                             }
                         })}
                     </div>
-                    <div className={styles.box_finishingUp_totalValue}>
+                </div>
+                <div className={styles.box_finishingUp_totalValue}>
                         <p>{this.state.formYearOrMonth ? "Total (per month)" : "Total (per year)"}</p>
                         <span>${this.calcTotalPrice()}/{this.state.formYearOrMonth ? "mo" : "yr"}</span>
                     </div>
-                </div>
             </div>
         )
     }

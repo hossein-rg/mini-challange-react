@@ -241,6 +241,9 @@ $color-p:rgb(185, 185, 185);
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        margin: 1rem;
+        padding: 0.7rem;
+        background-color: rgba(195, 255, 244, 0.416);
         &_changePlan{
             display: flex;
             align-items: center;
@@ -265,6 +268,45 @@ $color-p:rgb(185, 185, 185);
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 font-size: $font-p;
             }
+        }
+
+        &_addOns{
+            display: flex;
+            flex-direction: column;
+            border-top: 0.05rem solid rgb(184, 184, 184);
+            div{
+                display: flex;
+                align-items: center;
+                padding: 0.8rem 0 0.1rem 0;
+                >p{
+                    font-size: $font-p;
+                    flex-grow: 1;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: teal;
+                }
+                >span{
+                    padding: 0 1rem;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+    .box_finishingUp_totalValue{
+        padding:0.7rem 1rem;
+        margin:0 1rem;
+        display: flex;
+        p{
+            font-size: $font-p;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-grow: 1;
+        }
+        >span{
+            padding: 0 1rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: teal;
         }
     }
 }
