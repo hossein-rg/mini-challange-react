@@ -16,6 +16,8 @@ class MultiStepForm extends React.Component {
       checkedFullname: false,
       checkedEmail: false,
       checkedPhone: false,
+      planMonth: false,
+      planSelect: "",
     };
   }
 
@@ -36,6 +38,13 @@ class MultiStepForm extends React.Component {
         checkedPhone: data,
       });
     }
+  };
+
+  checkSelectPlan = (statusMonth, plan) => {
+    this.setState({
+      planMonth: statusMonth,
+      planSelect: plan,
+    });
   };
 
   setstateNextBtn = () => {
@@ -104,7 +113,7 @@ class MultiStepForm extends React.Component {
             ? this.setstateNextBtn()
             : (elementSelector[this.state.whereLocate].children[0].style.backgroundColor = "white");
         } else if (this.state.whereLocate == 1) {
-          this.state.checkedFullname && this.state.checkedEmail && this.state.checkedPhone
+          this.state.planSelect != ""
             ? this.setstateNextBtn()
             : (elementSelector[this.state.whereLocate].children[0].style.backgroundColor = "white");
         } else if (this.state.whereLocate == 2) {
@@ -139,7 +148,7 @@ class MultiStepForm extends React.Component {
         </div>
         <div style={{ width: "70%" }}>
           {whereLocate == 0 ? <PersonalInfo check={this.checkPersonalInfo} /> : <></>}
-          {whereLocate == 1 ? <SelectPlan /> : <></>}
+          {whereLocate == 1 ? <SelectPlan check={this.checkSelectPlan} /> : <></>}
           {whereLocate == 2 ? <AddOns /> : <></>}
           {whereLocate == 3 ? <FinishingUp /> : <></>}
           {whereLocate == 4 ? <FinishingUp /> : <></>}

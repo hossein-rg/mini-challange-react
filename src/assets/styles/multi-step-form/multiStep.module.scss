@@ -1,5 +1,5 @@
 * {
-    font-size: 100%;
+  font-size: 100%;
 }
 
 $font-head: 2rem;
@@ -8,355 +8,366 @@ $font-p: 1rem;
 $color-p: rgb(185, 185, 185);
 
 .div_PersonalInfo {
-    padding: $padd-mainBox;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-    h1 {
-        font-size: $font-head;
-    }
-    p {
-        font-size: $font-p;
-        color: $color-p;
-    }
+  padding: $padd-mainBox;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  h1 {
+    font-size: $font-head;
+  }
+  p {
+    font-size: $font-p;
+    color: $color-p;
+  }
 
-    .form_PersonalInfo {
-        padding: 1rem 0;
-        width: 700px;
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            div {
-                display: flex;
-                flex-direction: column;
-                gap: 0.3rem;
-                position: relative;
-                span {
-                    position: absolute;
-                    right: 285px;
-                    top: 0.5rem;
-                    font-size: 0.8rem;
-                    color: rgb(255, 77, 77);
-                    display: none;
-                }
-                label {
-                    color: teal;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                    font-size: 1rem;
-                }
-                input {
-                    padding: 0.7rem;
-                    width: 60%;
-                    border-radius: 0.4rem;
-                    border: 1px solid rgb(201, 201, 201);
-                    &:focus {
-                        border: 1px solid teal;
-                        outline: none;
-                    }
-                    &::placeholder {
-                        color: rgb(204, 204, 204);
-                    }
-                }
-            }
+  .form_PersonalInfo {
+    padding: 1rem 0;
+    width: 700px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        position: relative;
+        span {
+          position: absolute;
+          right: 285px;
+          top: 0.5rem;
+          font-size: 0.8rem;
+          color: rgb(255, 77, 77);
+          display: none;
         }
+        label {
+          color: teal;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 1rem;
+        }
+        input {
+          padding: 0.7rem;
+          width: 60%;
+          border-radius: 0.4rem;
+          border: 1px solid rgb(201, 201, 201);
+          &:focus {
+            border: 1px solid teal;
+            outline: none;
+          }
+          &::placeholder {
+            color: rgb(204, 204, 204);
+          }
+        }
+      }
     }
+  }
 }
 
 .div_selectPlan {
-    padding: $padd-mainBox;
+  padding: $padd-mainBox;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: fit-content;
+  h1 {
+    font-size: $font-head;
+  }
+  > p {
+    font-size: 1rem;
+    color: $color-p;
+  }
+  .box_selectPlan {
     display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    width: fit-content;
-    h1 {
-        font-size: $font-head;
+    gap: 1rem;
+    width: 110%;
+    margin-top: 1rem;
+    div {
+      background-color: rgb(255, 255, 255);
+      padding: 0.5rem 2rem 1.5rem 0.5rem;
+      width: 105px;
+      display: flex;
+      flex-direction: column;
+      height: 8rem;
+      border-radius: 0.5rem;
+      border: solid 1.5px gray;
+      justify-content: flex-start;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+        // border: solid 1.5px gray;
+      }
+      &:hover::after {
+        border: solid teal 1.5px;
+        background-color: transparent;
+      }
+      p {
+        font-size: $font-p;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(15, 91, 94);
+      }
+      span {
+        font-size: 0.8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      img {
+        width: 2rem;
+        margin-bottom: 2.5rem;
+      }
     }
-    > p {
-        font-size: 1rem;
-        color: $color-p;
+  }
+  .selectYorM {
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    p {
+      font-size: 1rem;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-    .box_selectPlan {
-        display: flex;
-        gap: 1rem;
-        width: 110%;
-        margin-top: 1rem;
-        div {
-            background-color: rgb(255, 255, 255);
-            padding: 0.5rem 2rem 1.5rem 0.5rem;
-            width: 105px;
-            border-radius: 0.5rem;
-            border: solid 1.5px gray;
-            display: flex;
-            flex-direction: column;
-            height: 8rem;
-            justify-content: flex-start;
-            p {
-                font-size: $font-p;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                color: rgb(15, 91, 94);
-            }
-            span {
-                font-size: 0.8rem;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-            img {
-                width: 2rem;
-                margin-bottom: 2.5rem;
-            }
-            &:hover {
-                border: solid teal 1.5px;
-                background-color: rgb(221, 239, 255);
-            }
-        }
-    }
-    .selectYorM {
-        display: flex;
-        gap: 0.9rem;
-        align-items: center;
-        justify-content: center;
-        margin-top: 1rem;
-        p {
-            font-size: 1rem;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-    }
+  }
 }
 
 .inputSelection {
-    width: 3rem;
-    height: 1.6rem;
+  width: 3rem;
+  height: 1.6rem;
+  transition: 0.3s;
+  background-color: rgb(140, 255, 255);
+  border-radius: 2rem;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(24, 116, 144);
+    width: 1.2rem;
+    height: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 2;
     transition: 0.3s;
-    background-color: rgb(140, 255, 255);
-    border-radius: 2rem;
-    position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        background-color: rgb(24, 116, 144);
-        width: 1.2rem;
-        height: 1.2rem;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        z-index: 2;
-        transition: 0.3s;
-        left: 0.2rem;
-    }
+    left: 0.2rem;
+  }
 }
 
 .inputSelectionYear {
+  transition: 0.3s;
+  background-color: greenyellow;
+  &::after {
     transition: 0.3s;
-    background-color: greenyellow;
-    &::after {
-        transition: 0.3s;
-        left: 1.6rem;
-        background-color: rgb(0, 75, 0);
-    }
+    left: 1.6rem;
+    background-color: rgb(0, 75, 0);
+  }
 }
 
 .div_addOns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: $padd-mainBox;
+  h1 {
+    font-size: $font-head;
+  }
+  > p {
+    color: $color-p;
+    font-size: $font-p;
+  }
+  div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: $padd-mainBox;
-    h1 {
-        font-size: $font-head;
-    }
-    > p {
-        color: $color-p;
-        font-size: $font-p;
-    }
-    div {
+    width: 400px;
+    margin-top: 0.5rem;
+    .AddOnsDetail {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.2rem;
+      position: relative;
+      input {
+        margin-left: 1rem;
+        background-color: gray;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border: solid 1.5px gray;
+          border-radius: 0.8rem;
+        }
+        &:checked {
+          &::after {
+            z-index: -1;
+            border: solid 1.5px teal;
+            background-color: rgb(200, 255, 255);
+          }
+        }
+      }
+
+      > p {
+        flex-grow: 1;
+        text-align: right;
+        padding: 0 1rem;
+        font-size: 0.8rem;
+        color: teal;
+      }
+      div {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        width: 400px;
-        margin-top: 0.5rem;
-        .AddOnsDetail {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 0.2rem;
-            position: relative;
-            input {
-                margin-left: 1rem;
-                background-color: gray;
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    border: solid 1.5px gray;
-                    border-radius: 0.8rem;
-                }
-                &:checked {
-                    &::after {
-                        z-index: -1;
-                        border: solid 1.5px teal;
-                        background-color: rgb(200, 255, 255);
-                    }
-                }
-            }
-
-            > p {
-                flex-grow: 1;
-                text-align: right;
-                padding: 0 1rem;
-                font-size: 0.8rem;
-                color: teal;
-            }
-            div {
-                display: flex;
-                flex-direction: column;
-                gap: 0;
-                padding: 0.7rem 0;
-                align-items: flex-start;
-                justify-content: center;
-                margin: 0;
-                p {
-                    font-size: 1rem;
-                    padding: 0;
-                }
-                span {
-                    font-size: 0.8rem;
-                    color: gray;
-                }
-            }
+        gap: 0;
+        padding: 0.7rem 0;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 0;
+        p {
+          font-size: 1rem;
+          padding: 0;
         }
+        span {
+          font-size: 0.8rem;
+          color: gray;
+        }
+      }
     }
+  }
 }
 
 .div_finishingUp {
-    padding: $padd-mainBox;
+  padding: $padd-mainBox;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 500px;
+  h1 {
+    font-size: $font-head;
+  }
+  > p {
+    font-size: $font-p;
+    color: $color-p;
+  }
+  .box_finishingUp {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    width: 500px;
-    h1 {
-        font-size: $font-head;
-    }
-    > p {
-        font-size: $font-p;
-        color: $color-p;
-    }
-    .box_finishingUp {
+    gap: 1rem;
+    margin: 1rem;
+    padding: 0.7rem;
+    background-color: rgba(195, 255, 244, 0.416);
+    &_changePlan {
+      display: flex;
+      align-items: center;
+      div {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        margin: 1rem;
-        padding: 0.7rem;
-        background-color: rgba(195, 255, 244, 0.416);
-        &_changePlan {
-            display: flex;
-            align-items: center;
-            div {
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                p:first-child {
-                    font-size: 1rem;
-                    font-weight: 600;
-                }
-                p:nth-child(2) {
-                    font-size: 0.8em;
-                    color: gray;
-                    cursor: pointer;
-                }
-            }
-            > p {
-                padding: 0 1rem;
-                font-weight: bold;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: $font-p;
-            }
+        flex-grow: 1;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        p:first-child {
+          font-size: 1rem;
+          font-weight: 600;
         }
-
-        &_addOns {
-            display: flex;
-            flex-direction: column;
-            border-top: 0.05rem solid rgb(184, 184, 184);
-            div {
-                display: flex;
-                align-items: center;
-                padding: 0.8rem 0 0.1rem 0;
-                > p {
-                    font-size: $font-p;
-                    flex-grow: 1;
-                    font-family: Arial, Helvetica, sans-serif;
-                    color: teal;
-                }
-                > span {
-                    padding: 0 1rem;
-                    font-family: Verdana, Geneva, Tahoma, sans-serif;
-                    font-size: 0.9rem;
-                }
-            }
+        p:nth-child(2) {
+          font-size: 0.8em;
+          color: gray;
+          cursor: pointer;
         }
+      }
+      > p {
+        padding: 0 1rem;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: $font-p;
+      }
     }
-    .box_finishingUp_totalValue {
-        padding: 0.7rem 1rem;
-        margin: 0 1rem;
+
+    &_addOns {
+      display: flex;
+      flex-direction: column;
+      border-top: 0.05rem solid rgb(184, 184, 184);
+      div {
         display: flex;
-        p {
-            font-size: $font-p;
-            font-family: Arial, Helvetica, sans-serif;
-            flex-grow: 1;
+        align-items: center;
+        padding: 0.8rem 0 0.1rem 0;
+        > p {
+          font-size: $font-p;
+          flex-grow: 1;
+          font-family: Arial, Helvetica, sans-serif;
+          color: teal;
         }
         > span {
-            padding: 0 1rem;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: teal;
+          padding: 0 1rem;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 0.9rem;
         }
+      }
     }
+  }
+  .box_finishingUp_totalValue {
+    padding: 0.7rem 1rem;
+    margin: 0 1rem;
+    display: flex;
+    p {
+      font-size: $font-p;
+      font-family: Arial, Helvetica, sans-serif;
+      flex-grow: 1;
+    }
+    > span {
+      padding: 0 1rem;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: teal;
+    }
+  }
 }
 
 // multi step form main section
 
 .mainApp {
-    display: flex;
-    width: 700px;
-    margin: auto;
+  display: flex;
+  width: 700px;
+  margin: auto;
 }
 
 .stepsSidebar {
-    padding: 3rem 1rem;
-    background: url('../../images/multi-step-form/img/bg-sidebar-desktop.svg');
-    background-size: cover;
-    flex-grow: 1;
-    &_ {
-        display: flex;
-        flex-direction: column;
-        gap: 1.3rem;
+  padding: 3rem 1rem;
+  background: url("../../images/multi-step-form/img/bg-sidebar-desktop.svg");
+  background-size: cover;
+  flex-grow: 1;
+  &_ {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+  &_counter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &:first-child div:first-child {
+      background-color: white;
     }
-    &_counter {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        &:first-child div:first-child {
-            background-color: white;
-        }
-        .numberStep {
-            padding: 0.5rem 0.8rem;
-            border-radius: 50%;
-            border: 1px solid white;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        .detailStep {
-            font-family: Arial, Helvetica, sans-serif;
-            span {
-                font-size: 0.7rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-        }
+    .numberStep {
+      padding: 0.5rem 0.8rem;
+      border-radius: 50%;
+      border: 1px solid white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
+    .detailStep {
+      font-family: Arial, Helvetica, sans-serif;
+      span {
+        font-size: 0.7rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
 }
