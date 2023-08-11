@@ -1,137 +1,138 @@
 // eslint-disable-next-line no-unused-vars
-import React, { Component } from 'react';
-import styles from "../../assets/styles/pass-gen/passGen.module.scss";
-import iconCopy from "../../assets/images/pass-gen/iconcopy.png";
-class PassGen extends Component{
-    constructor(props){
-        super(props);
-        this.ucSelect = React.createRef();
-        this.lcSelect = React.createRef();
-        this.nuSelect = React.createRef();
-        this.sySelect = React.createRef();
-        this.state={
-            charLength:0,
-            passCreated:"",
-            powerPass:"",
+import React, { Component } from 'react'
+import styles from '../../assets/styles/pass-gen/passGen.module.scss'
+import iconCopy from '../../assets/images/pass-gen/iconcopy.png'
+class PassGen extends Component {
+    constructor(props) {
+        super(props)
+        this.ucSelect = React.createRef()
+        this.lcSelect = React.createRef()
+        this.nuSelect = React.createRef()
+        this.sySelect = React.createRef()
+        this.state = {
+            charLength: 0,
+            passCreated: '',
+            powerPass: '',
         }
     }
 
-    createPass = ()=>{
+    createPass = () => {
         // check status checkboxes
-        let statusUpper = this.ucSelect.current.checked;
-        let statusLower = this.lcSelect.current.checked;
-        let statusNumber = this.nuSelect.current.checked;
-        let statusSymbol = this.sySelect.current.checked;
+        let statusUpper = this.ucSelect.current.checked
+        let statusLower = this.lcSelect.current.checked
+        let statusNumber = this.nuSelect.current.checked
+        let statusSymbol = this.sySelect.current.checked
 
         // show strength
-        
-        let checkPower = 0;
-        statusLower ? checkPower = checkPower + 1 : checkPower ;
-        statusUpper ? checkPower = checkPower + 2 : checkPower ;
-        statusNumber ? checkPower = checkPower + 2 : checkPower ; 
-        statusSymbol ? checkPower = checkPower + 2 : checkPower ;
-        if(this.state.charLength < 5){
-            if(checkPower < 3){
+
+        let checkPower = 0
+        statusLower ? (checkPower = checkPower + 1) : checkPower
+        statusUpper ? (checkPower = checkPower + 2) : checkPower
+        statusNumber ? (checkPower = checkPower + 2) : checkPower
+        statusSymbol ? (checkPower = checkPower + 2) : checkPower
+        if (this.state.charLength < 5) {
+            if (checkPower < 3) {
                 this.setState({
-                    powerPass:"🔴"
+                    powerPass: '🔴',
+                })
+            } else if (checkPower < 5) {
+                this.setState({
+                    powerPass: '🟡🟡',
+                })
+            } else if (checkPower <= 7) {
+                this.setState({
+                    powerPass: '🟡🟡🟡',
                 })
             }
-            else if (checkPower<5){
+        } else if (this.state.charLength >= 5 && this.state.charLength < 10) {
+            if (checkPower < 3) {
                 this.setState({
-                    powerPass: "🟡🟡"
-                    });  
-            }
-            else if (checkPower<=7){
+                    powerPass: '🟡🟡',
+                })
+            } else if (checkPower < 5) {
                 this.setState({
-                    powerPass: "🟡🟡🟡"
-                    });  
-            }
-        }
-        else if(this.state.charLength >= 5 && this.state.charLength < 10){
-            if(checkPower < 3){
+                    powerPass: '🟢🟢🟢🟢',
+                })
+            } else if (checkPower <= 7) {
                 this.setState({
-                    powerPass:"🟡🟡"
+                    powerPass: '🟢🟢🟢🟢🟢',
                 })
             }
-            else if (checkPower<5){
+        } else if (this.state.charLength >= 10) {
+            if (checkPower < 3) {
                 this.setState({
-                    powerPass: "🟢🟢🟢🟢"
-                    });  
-            }
-            else if (checkPower<=7){
-                this.setState({
-                    powerPass: "🟢🟢🟢🟢🟢"
-                    });  
-            }
-        }
-        else if(this.state.charLength >= 10){
-            if(checkPower < 3){
-                this.setState({
-                    powerPass:"🟢🟢🟢🟢"
+                    powerPass: '🟢🟢🟢🟢',
                 })
-            }
-            else if (checkPower<5){
+            } else if (checkPower < 5) {
                 this.setState({
-                    powerPass: "🟢🟢🟢🟢🟢"
-                    });  
-            }
-            else if (checkPower<=7){
+                    powerPass: '🟢🟢🟢🟢🟢',
+                })
+            } else if (checkPower <= 7) {
                 this.setState({
-                    powerPass: "🟢🟢🟢🟢🟢🟢"
-                    });  
+                    powerPass: '🟢🟢🟢🟢🟢🟢',
+                })
             }
         }
         // create allStrings
-        let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        let number ="0123456789";
-        let symbol= "!@#$%&?";
+        let upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let lowerCase = 'abcdefghijklmnopqrstuvwxyz'
+        let number = '0123456789'
+        let symbol = '!@#$%&?'
 
-        const all = [];
-        statusLower ? all.push(lowerCase) : all.filter(item => item !== lowerCase);
-        statusUpper ? all.push(upperCase) : all.filter(item => item !== upperCase);
-        statusNumber ? all.push(number) : all.filter(item=>item !== number);
-        statusSymbol ? all.push(symbol) : all.filter(item => item !== symbol);
+        const all = []
+        statusLower
+            ? all.push(lowerCase)
+            : all.filter((item) => item !== lowerCase)
+        statusUpper
+            ? all.push(upperCase)
+            : all.filter((item) => item !== upperCase)
+        statusNumber ? all.push(number) : all.filter((item) => item !== number)
+        statusSymbol ? all.push(symbol) : all.filter((item) => item !== symbol)
 
         // create password
-        const {charLength} = this.state;
+        const { charLength } = this.state
 
-        var passwordCreated = "";
-        for(let i = 0 ; i < charLength ; i++){
-            if(all.length == 0) return;
-            let nRandom = Math.floor(Math.random() * all.length);
-            let nnRandom = Math.floor(Math.random() * all[nRandom].length);
-            passwordCreated += all[nRandom][nnRandom];    
+        var passwordCreated = ''
+        for (let i = 0; i < charLength; i++) {
+            if (all.length == 0) return
+            let nRandom = Math.floor(Math.random() * all.length)
+            let nnRandom = Math.floor(Math.random() * all[nRandom].length)
+            passwordCreated += all[nRandom][nnRandom]
         }
         this.setState({
-            passCreated:passwordCreated,
-        })                             
+            passCreated: passwordCreated,
+        })
     }
 
-    changeLength = (event)=>{
-        this.setState({
-            charLength : event.target.value
-        },()=>this.createPass())
+    changeLength = (event) => {
+        this.setState(
+            {
+                charLength: event.target.value,
+            },
+            () => this.createPass()
+        )
     }
 
-
-    copyLink =()=>{
-        if(this.state.passCreated === ""){
-            alert("Please create your own password")
+    copyLink = () => {
+        if (this.state.passCreated === '') {
+            alert('Please create your own password')
+        } else {
+            navigator.clipboard.writeText(this.state.passCreated)
+            alert('Copied to clipboard')
         }
-        else{
-            navigator.clipboard.writeText(this.state.passCreated);
-            alert("Copied to clipboard");
-        }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className={styles.container}>
                 <h2>Password Generator</h2>
                 <div className={styles.container_passWasCreate}>
                     <p>{this.state.passCreated}</p>
-                    <img onClick={this.copyLink} src={iconCopy} alt="iconCopy" />
+                    <img
+                        onClick={this.copyLink}
+                        src={iconCopy}
+                        alt="iconCopy"
+                    />
                 </div>
                 <div className={styles.container_createPass}>
                     <div className={styles.passLength}>
@@ -140,26 +141,53 @@ class PassGen extends Component{
                             <h1>{this.state.charLength}</h1>
                         </div>
                         <div className={styles.rangeChar}>
-                            <input type="range" min="0" max="13" name="rangeLen" value={this.state.charLength} onChange={this.changeLength}/>
+                            <input
+                                type="range"
+                                min="0"
+                                max="13"
+                                name="rangeLen"
+                                value={this.state.charLength}
+                                onChange={this.changeLength}
+                            />
                         </div>
                     </div>
                     <div className={styles.passStrength}>
                         <ul>
                             <li>
-                            <input ref={this.ucSelect} onClick={this.createPass} type="checkbox" name="uppercase"/>
-                            <p>Include Uppercase Letters</p>
+                                <input
+                                    ref={this.ucSelect}
+                                    onClick={this.createPass}
+                                    type="checkbox"
+                                    name="uppercase"
+                                />
+                                <p>Include Uppercase Letters</p>
                             </li>
                             <li>
-                            <input ref={this.lcSelect} onClick={this.createPass} type="checkbox" name="lowercase" />
-                            <p>Include Lowercase Letters</p>
+                                <input
+                                    ref={this.lcSelect}
+                                    onClick={this.createPass}
+                                    type="checkbox"
+                                    name="lowercase"
+                                />
+                                <p>Include Lowercase Letters</p>
                             </li>
                             <li>
-                            <input ref={this.nuSelect} onClick={this.createPass} type="checkbox" name="number" />
-                            <p>Include Numbers</p>
+                                <input
+                                    ref={this.nuSelect}
+                                    onClick={this.createPass}
+                                    type="checkbox"
+                                    name="number"
+                                />
+                                <p>Include Numbers</p>
                             </li>
                             <li>
-                            <input ref={this.sySelect} onClick={this.createPass} type="checkbox" name="symbols" />
-                            <p>Include Symbols</p>
+                                <input
+                                    ref={this.sySelect}
+                                    onClick={this.createPass}
+                                    type="checkbox"
+                                    name="symbols"
+                                />
+                                <p>Include Symbols</p>
                             </li>
                         </ul>
                     </div>
@@ -173,4 +201,4 @@ class PassGen extends Component{
     }
 }
 
-export default PassGen;
+export default PassGen

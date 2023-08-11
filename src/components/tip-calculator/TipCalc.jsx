@@ -1,57 +1,60 @@
 // eslint-disable-next-line no-unused-vars
-import React, { Component } from 'react';
-import Top from './top/Top';
+import React, { Component } from 'react'
+import Top from './top/Top'
 // import left side
-import Bill from './section-left/Bill';
-import Tip from './section-left/Tip';
-import People from './section-left/People';
+import Bill from './section-left/Bill'
+import Tip from './section-left/Tip'
+import People from './section-left/People'
 // import right side
-import AmountTotal from './section-right/AmountTotal';
-import "../../assets/styles/tip-calc/tipCalc.scss"
-class TipCalc extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            people:0,
-            bill:0,
-            tip:0
+import AmountTotal from './section-right/AmountTotal'
+import '../../assets/styles/tip-calc/tipCalc.scss'
+class TipCalc extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            people: 0,
+            bill: 0,
+            tip: 0,
         }
     }
-    cbPeople=(dataPeople)=>{
+    cbPeople = (dataPeople) => {
         this.setState({
-            people:dataPeople,
+            people: dataPeople,
         })
     }
-    cbBill=(dataBill)=>{
+    cbBill = (dataBill) => {
         this.setState({
-            bill:dataBill,
+            bill: dataBill,
         })
     }
-    cbTip=(dataTip)=>{
+    cbTip = (dataTip) => {
         this.setState({
-            tip:dataTip,
+            tip: dataTip,
         })
     }
-    render(){
-
-    return(
-        <div className='body'>
-        <div className='top'>
-            <Top />
-        </div>
-        <div className='section'>
-        <div className='section-left'>
-                <Bill callBackBill = {this.cbBill}/>
-                <Tip callBackTip = {this.cbTip}/>
-                <People  callBackPeople={this.cbPeople} />
+    render() {
+        return (
+            <div className="body">
+                <div className="top">
+                    <Top />
+                </div>
+                <div className="section">
+                    <div className="section-left">
+                        <Bill callBackBill={this.cbBill} />
+                        <Tip callBackTip={this.cbTip} />
+                        <People callBackPeople={this.cbPeople} />
+                    </div>
+                    <div className="section-right">
+                        <AmountTotal
+                            people={this.state.people}
+                            tip={this.state.tip}
+                            bill={this.state.bill}
+                        />
+                    </div>
+                </div>
             </div>
-            <div className='section-right'>
-                <AmountTotal  people = {this.state.people} tip = {this.state.tip} bill = {this.state.bill}/>
-            </div>
-        </div>
-        </div>
-    )
+        )
     }
 }
 
-export default TipCalc;
+export default TipCalc
