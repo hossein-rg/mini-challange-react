@@ -18,6 +18,9 @@ class MultiStepForm extends React.Component {
       checkedPhone: false,
       planMonth: false,
       planSelect: "",
+      addOns_os: false,
+      addOns_ls: false,
+      addOns_cp: false,
     };
   }
 
@@ -44,6 +47,14 @@ class MultiStepForm extends React.Component {
     this.setState({
       planMonth: statusMonth,
       planSelect: plan,
+    });
+  };
+
+  checkSelectAddons = (os, ls, cp) => {
+    this.setState({
+      addOns_os: os,
+      addOns_ls: ls,
+      addOns_cp: cp,
     });
   };
 
@@ -149,9 +160,9 @@ class MultiStepForm extends React.Component {
         <div style={{ width: "70%" }}>
           {whereLocate == 0 ? <PersonalInfo check={this.checkPersonalInfo} /> : <></>}
           {whereLocate == 1 ? <SelectPlan check={this.checkSelectPlan} /> : <></>}
-          {whereLocate == 2 ? <AddOns /> : <></>}
+          {whereLocate == 2 ? <AddOns check={this.checkSelectAddons} /> : <></>}
           {whereLocate == 3 ? <FinishingUp /> : <></>}
-          {whereLocate == 4 ? <FinishingUp /> : <></>}
+          {whereLocate >= 4 ? <FinishingUp /> : <></>}
           <button style={{ display: "none" }} ref={this.btnBack} data-click="0" onClick={clickWherePage}>
             Go Back
           </button>
