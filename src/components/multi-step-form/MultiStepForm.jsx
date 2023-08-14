@@ -60,6 +60,7 @@ class MultiStepForm extends React.Component {
 
   setstateNextBtn = () => {
     let backBtn = this.btnBack.current;
+    // let nextBtn = this.btnNext.current;
     let elementSelector = this.stepSelector.current.children;
     backBtn.style.display = "block";
     this.setState(
@@ -67,7 +68,11 @@ class MultiStepForm extends React.Component {
         whereLocate: this.state.whereLocate + 1,
       },
       () => {
-        elementSelector[this.state.whereLocate].children[0].style.backgroundColor = "white";
+        if (this.state.whereLocate == 4) {
+          console.log(1);
+        } else {
+          elementSelector[this.state.whereLocate].children[0].style.backgroundColor = "white";
+        }
       }
     );
   };
@@ -139,7 +144,7 @@ class MultiStepForm extends React.Component {
       }
     };
 
-    const { whereLocate } = this.state;
+    const { whereLocate, planSelect, planMonth, addOns_cp, addOns_ls, addOns_os } = this.state;
     return (
       <div className={styles.mainApp}>
         <div className={styles.stepsSidebar}>
@@ -161,8 +166,8 @@ class MultiStepForm extends React.Component {
           {whereLocate == 0 ? <PersonalInfo check={this.checkPersonalInfo} /> : <></>}
           {whereLocate == 1 ? <SelectPlan check={this.checkSelectPlan} /> : <></>}
           {whereLocate == 2 ? <AddOns check={this.checkSelectAddons} /> : <></>}
-          {whereLocate == 3 ? <FinishingUp /> : <></>}
-          {whereLocate >= 4 ? <FinishingUp /> : <></>}
+          {whereLocate == 3 ? <FinishingUp plan={[planSelect, planMonth]} addons={[addOns_os, addOns_ls, addOns_cp]} /> : <></>}
+          {whereLocate > 3 ? <SelectPlan /> : <></>}
           <button style={{ display: "none" }} ref={this.btnBack} data-click="0" onClick={clickWherePage}>
             Go Back
           </button>
