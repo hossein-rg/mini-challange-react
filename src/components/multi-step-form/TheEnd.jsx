@@ -9,7 +9,7 @@ class TheEnd extends React.Component {
         <h1>Thank you!</h1>
         <p>
           Thanks for confirming your subscription! We hope you have fun using our platform. if you ever need suppor, please feel free to
-          email us at support@hossinrg1380@gmail.com
+          email us at support hossinrg1380@gmail.com
         </p>
       </div>
     );

@@ -65,15 +65,19 @@ class MultiStepForm extends React.Component {
     let elementSelector = this.stepSelector.current.children;
     nextBtn.innerHTML = "Next Step";
     nextBtn.style.backgroundColor = "";
+    nextBtn.style.display = "block";
     backBtn.style.display = "block";
     this.setState(
       {
         whereLocate: this.state.whereLocate + 1,
       },
       () => {
-        if (this.state.whereLocate == 4) {
+        if (this.state.whereLocate == 3) {
           nextBtn.innerHTML = "Confirm";
           nextBtn.style.backgroundColor = "teal";
+        } else if (this.state.whereLocate == 4) {
+          backBtn.style.display = "none";
+          nextBtn.style.display = "none";
         } else {
           elementSelector[this.state.whereLocate].children[0].style.backgroundColor = "white";
         }
