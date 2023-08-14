@@ -4,6 +4,7 @@ import PersonalInfo from "./PersonalInfo";
 import SelectPlan from "./SelectPlan";
 import AddOns from "./AddOns";
 import FinishingUp from "./FinishingUp";
+import TheEnd from "./TheEnd";
 
 class MultiStepForm extends React.Component {
   constructor(props) {
@@ -60,8 +61,10 @@ class MultiStepForm extends React.Component {
 
   setstateNextBtn = () => {
     let backBtn = this.btnBack.current;
-    // let nextBtn = this.btnNext.current;
+    let nextBtn = this.btnNext.current;
     let elementSelector = this.stepSelector.current.children;
+    nextBtn.innerHTML = "Next Step";
+    nextBtn.style.backgroundColor = "";
     backBtn.style.display = "block";
     this.setState(
       {
@@ -69,7 +72,8 @@ class MultiStepForm extends React.Component {
       },
       () => {
         if (this.state.whereLocate == 4) {
-          console.log(1);
+          nextBtn.innerHTML = "Confirm";
+          nextBtn.style.backgroundColor = "teal";
         } else {
           elementSelector[this.state.whereLocate].children[0].style.backgroundColor = "white";
         }
@@ -162,18 +166,20 @@ class MultiStepForm extends React.Component {
             })}
           </div>
         </div>
-        <div style={{ width: "70%" }}>
+        <div className={styles.rightside} style={{ width: "70%" }}>
           {whereLocate == 0 ? <PersonalInfo check={this.checkPersonalInfo} /> : <></>}
           {whereLocate == 1 ? <SelectPlan check={this.checkSelectPlan} /> : <></>}
           {whereLocate == 2 ? <AddOns check={this.checkSelectAddons} /> : <></>}
           {whereLocate == 3 ? <FinishingUp plan={[planSelect, planMonth]} addons={[addOns_os, addOns_ls, addOns_cp]} /> : <></>}
-          {whereLocate > 3 ? <SelectPlan /> : <></>}
-          <button style={{ display: "none" }} ref={this.btnBack} data-click="0" onClick={clickWherePage}>
-            Go Back
-          </button>
-          <button ref={this.btnNext} data-click="1" onClick={clickWherePage}>
-            Next Step
-          </button>
+          {whereLocate > 3 ? <TheEnd /> : <></>}
+          <div className={styles.handleBtns}>
+            <button ref={this.btnNext} data-click="1" onClick={clickWherePage}>
+              Next Step
+            </button>
+            <button style={{ display: "none" }} ref={this.btnBack} data-click="0" onClick={clickWherePage}>
+              Go Back
+            </button>
+          </div>
         </div>
       </div>
     );

@@ -334,7 +334,15 @@ $color-p: rgb(185, 185, 185);
 .mainApp {
   display: flex;
   width: 700px;
+  // height: 450px;
   margin: auto;
+}
+
+.rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
 }
 
 .stepsSidebar {
@@ -369,5 +377,46 @@ $color-p: rgb(185, 185, 185);
         font-size: 1rem;
       }
     }
+  }
+}
+
+.handleBtns {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  direction: rtl;
+  button {
+    padding: 1rem 1.3rem;
+    border-radius: 0.7rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  button:last-child {
+    color: gray;
+  }
+  button:first-child {
+    color: white;
+    background-color: rgb(63, 23, 194);
+  }
+}
+
+.theend {
+  padding-top: 7rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 4rem;
+  }
+  h1 {
+    font-size: $font-head;
+  }
+  p {
+    font-size: $font-p;
+    text-align: center;
+    width: 90%;
+    color: $color-p;
   }
 }
