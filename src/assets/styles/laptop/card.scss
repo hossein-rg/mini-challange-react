@@ -1,50 +1,49 @@
-@import '../../../App.scss';
+@import "../../../App.scss";
 
 .father-box-laptop {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 .card-container {
-    background-color: rgb(255, 255, 255);
-    width: min-content;
-    .img-laptop {
-        width: 20vw;
+  background-color: rgb(255, 255, 255);
+  width: min-content;
+  .img-laptop {
+    width: 20vw;
+  }
+  &-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    h1 {
+      font-size: 2rem;
     }
-    &-detail {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.4rem;
-        h1 {
-            font-size: 2rem;
-        }
-        p {
-            font-weight: bold;
-        }
-        div {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            .arrow-down {
-                transform: rotate(-90deg);
-            }
-            .arrow-up {
-                transform: rotate(90deg);
-            }
-        }
+    p {
+      font-weight: bold;
     }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .arrow-down {
+        transform: rotate(-90deg);
+      }
+      .arrow-up {
+        transform: rotate(90deg);
+      }
+    }
+  }
 }
 
 .filter-gray {
-    filter: invert(83%) sepia(7%) saturate(25%) hue-rotate(314deg)
-        brightness(82%) contrast(93%);
+  filter: invert(83%) sepia(7%) saturate(25%) hue-rotate(314deg) brightness(82%) contrast(93%);
 }
 
 .helloworld {
-    font-size: 3rem;
-    background-color: aquamarine;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
+  background-color: aquamarine;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
