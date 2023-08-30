@@ -3,7 +3,7 @@ import MultiStepForm from "./components/multi-step-form/MultiStepForm";
 import PassGen from "./components/password-generator/PassGen";
 import CardsLaptop from "./components/card-laptop/CardsLaptop";
 import TipCalc from "./components/tip-calculator/TipCalc";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Routes } from "react-router-dom";
 function App() {
   return (
     <div>
@@ -23,10 +23,12 @@ function App() {
         </li>
       </ul>
       <div>
-        <Route path="/cardslaptop" component={CardsLaptop} />
-        <Route path="/tipcalc" component={TipCalc} />
-        <Route path="/passgen" component={PassGen} />
-        <Route path="/multistep" component={MultiStepForm} />
+        <Routes>
+          <Route path="/cardslaptop" element={<CardsLaptop />} />
+          <Route path="/tipcalc" element={<TipCalc />} />
+          <Route path="/passgen" element={<PassGen />} />
+          <Route path="/multistep" element={<MultiStepForm />} />
+        </Routes>
       </div>
     </div>
   );
