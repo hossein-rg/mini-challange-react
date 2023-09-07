@@ -4,6 +4,7 @@ import PassGen from "./components/password-generator/PassGen";
 import CardsLaptop from "./components/card-laptop/CardsLaptop";
 import TipCalc from "./components/tip-calculator/TipCalc";
 import { Route, Link, Routes } from "react-router-dom";
+import GuessMyNumber from "./components/guessMyNumber/GuessMyNumber";
 function App() {
   return (
     <div>
@@ -21,6 +22,9 @@ function App() {
         <li>
           <Link to="/multistep">multi step forms</Link>
         </li>
+        <li>
+          <Link to="/guessmynumber">guess my number</Link>
+        </li>
       </ul>
       <div>
         <Routes>
@@ -28,6 +32,7 @@ function App() {
           <Route path="/tipcalc" element={<TipCalc />} />
           <Route path="/passgen" element={<PassGen />} />
           <Route path="/multistep" element={<MultiStepForm />} />
+          <Route path="/guessmynumber" element={<GuessMyNumber />} />
         </Routes>
       </div>
     </div>
